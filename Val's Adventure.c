@@ -27,15 +27,15 @@ void Tutorial(){
 	 	
 	 	case 'm': 
 	 		system("cls || clear");
-    		Beep(650, 150);
-    		Menu();
-    		break;
+    			Beep(650, 150);
+    			Menu();
+    			break;
     	
-    	case 'M':
-    		system("cls || clear");
-    		Beep(650, 150);
-    		Menu();
-    		break;
+    		case 'M':
+    			system("cls || clear");
+    			Beep(650, 150);
+    			Menu();
+    			break;
 		
 		default: 
 			system("cls || clear");
@@ -154,7 +154,7 @@ void Menu(){
 	
 	case 1:	
 		system("cls || clear");
-	    Beep(650, 150);
+	    	Beep(650, 150);
 		Start();
 		break;
 	
@@ -162,16 +162,16 @@ void Menu(){
 		system ("cls || clear");
 		Beep(660, 150);
 		Tutorial();
-	    break;
+	    	break;
     
 	case 3: 
 		system("cls || clear");
 		printf("\n");
 		printf("Leaving...");
 		Beep(262, 500); 
-	    Beep(196, 500); 
-	    Beep(165, 1000); 
-	    Beep(131, 1000); 
+	    	Beep(196, 500); 
+	    	Beep(165, 1000); 
+	    	Beep(131, 1000); 
 		return 0;
 	
 	default: 
