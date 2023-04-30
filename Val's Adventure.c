@@ -135,22 +135,10 @@ void Menu(){
 	int option;
 	
     
-    printf("                                             \033[1;41m========================================================\033[0;40m\n");
-    printf("                                             \033[1;41m|                                                       |\033[0;40m\n");
-    printf("                                             \033[1;41m|                  Welcome to Val's Adventure	       |\033[0;40m\n");
-    printf("                                             \033[1;41m|                                                       |\033[0;40m\n");
-    printf("                                             \033[1;41m========================================================\033[0;40m\n\n"); 
-    
-    
-	Beep(440, 100); 
-    Beep(523, 100); 
-    Beep(659, 500);  
-	Beep(659, 100); 
-    Beep(523, 100); 
-    Beep(440, 500);  
-                                           
-	printf("                                \033[44m 1. Start\033[0m             \033[43m2. Tutorial\033[0m            3. Leave\n\n\n"); 
-	printf("                                                         \033[1;41mChoose your option:\033[m\n\n   ");  
+   
+    printf(" \n\n\n\n\n\n\n\n                                                         Choose your option:\n\n   ");                              
+	printf("                                        1. Start           2. Tutorial           3. Leave\n\n\n"); 
+	  
 	
 	scanf("%d", &option);
 	
@@ -171,7 +159,7 @@ void Menu(){
 	case 3: 
 		system("cls || clear");
 		printf("\n");
-		printf("Saindo...");
+		printf("Leaving...");
 		Beep(262, 500); 
 	    Beep(196, 500); 
 	    Beep(165, 1000); 
