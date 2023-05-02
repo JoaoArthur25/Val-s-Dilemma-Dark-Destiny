@@ -11,14 +11,24 @@ void Tutorial(){
 	
 	char option;
 	system("cls || clear");
-	printf("                                  Val's adventure is an adventure/puzzle game where your goal is to take Val to the end of her adventure\n"
-	 "                                           in this dungeon where she's looking for an ancient cursed weapon.\n\n");
-	printf("                                              In each level the player must move to get a key to open the closed door.\n\n\n");
+	 printf("\n\n                                  Val's adventure is an adventure/puzzle game where your goal is to take Val to the end of her adventure\n"
+	 "                                                  in this dungeon where she's looking for an ancient cursed weapon.\n\n");
+	 printf("                                              In each level the player must move to get a key to open the closed door.\n\n\n");
 	 printf("                                                                             W: Up\n");
 	 printf("                                                                     A: Left\t     D: Right\n");
 	 printf("                                                                             S: Down\n\n\n");
-	 printf("                                                                I: Interacts with object above\n\n\n");
+	 printf("                                                                I: Interacts with object above\n\n");
 	 
+	 printf("                                                                &: symbol representing the player\n\n");
+	 printf("                                                                *: symbol representing a wall\n\n");
+	 printf("                                                                @: symbal representing a key\n\n");
+	 printf("                                                                D: symbol representing a close door\n\n");
+	 printf("                                                                =: symbol representing a open door\n\n");
+	 printf("                                                                O: symbol representing a botton that the player can interact\n\n");
+	 printf("                                                                #: symbol representing a thorn. The player lost hp when he touches it.\n\n");
+	 printf("                                                                >: symbol representing a teleportation\n\n");
+	 printf("                                                                ¬: symbol representing a level 1 monster\n\n");
+	 printf("                                                                k: symbol representing a level 2 monster\n\n\n");
 	 printf("                                                                Press M to go back to the Menu: \n\n\n\n   ");  
 	 
 	 printf("                                         --------------------------------------------------------------------------------\n");
@@ -28,11 +38,6 @@ void Tutorial(){
 	 switch(option){
 	 	
 	 	case 'm': 
-	 		system("cls || clear");
-    		Beep(650, 150);
-    		Menu();
-    		break;
-    	
     	case 'M':
     		system("cls || clear");
     		Beep(650, 150);
@@ -52,28 +57,30 @@ void Tutorial(){
 char map[15][15] = { // map's bidimentional array
 
     {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
-    {'*', '.', '*', '.', '*', '.', '.', '*', '.', '.', '.', '.', '.', '.', '*'},
-    {'*', '.', '*', '.', '*', '.', '.', '*', '.', '.', '.', '.', '.', '.', '*'},
-    {'*', '.', '.', '.', '*', '#', '.', '*', '.', '.', '.', '.', '.', '.', '*'},
-    {'*', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '#', '.', '.', '*'},
-    {'*', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
-    {'*', '.', '#', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
-    {'*', '.', '*', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
-    {'*', '.', '*', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '*'},
-    {'*', '.', '*', '.', '.', '.', '.', '.', '.', '.', '.', '.', '#', '.', '*'},
-    {'*', '.', '*', '.', '.', '.', '.', '.', '.', '.', '.', '*', '.', '.', '*'},
-    {'*', '.', '*', '.', '.', '.', '.', '#', '.', '.', '.', '*', '.', '.', '*'},
-    {'*', '.', '*', '.', '.', '.', '.', '.', '.', '.', '.', '*', '.', '.', '*'},
-    {'*', '*', '*', '.', '.', '.', '.', '.', '.', '.', '.', '*', '.', '.', '*'},
+    {'*', ' ', '*', ' ', '*', ' ', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+    {'*', ' ', '*', ' ', '*', ' ', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+    {'*', ' ', ' ', ' ', '*', '#', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+    {'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', '*'},
+    {'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+    {'*', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+    {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'D'},
+    {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+    {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '*'},
+    {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'},
+    {'*', ' ', '*', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', '*', ' ', ' ', '*'},
+    {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'},
+    {'*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'},
     {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'}
 };
 void Map(){ // draws the map on the screen
 
     system("cls"); 
     printf("\n\n\n\n\n\n\n");
-    for (int y = 0; y < 15; y++)
+    int y;
+    int x;
+    for (y = 0; y < 15; y++)
     {
-        for (int x = 0; x < 15; x++)
+        for (x = 0; x < 15; x++)
         {
             if (x == playerX && y == playerY){   // draws the player at the current position
             
@@ -157,8 +164,13 @@ void Start(){ //game
 	}
 	
 	Map();
-    printf("\n\n                                                                           HP: %d\n", hp);
+    printf("\n\n                                                                      HP: %d\n", hp);
 }
+
+	if(hp == 0)
+	{
+		printf("\n\n\n                                                                    Game Over                                                         ");
+	}
 	return 0;
 }
 
