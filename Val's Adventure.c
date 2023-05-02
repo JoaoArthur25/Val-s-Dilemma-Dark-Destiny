@@ -74,7 +74,7 @@ char map[15][15] = { // map's bidimentional array
 };
 void Map(){ // draws the map on the screen
 
-    system("cls"); 
+    system("cls || clear"); 
     printf("\n\n\n\n\n\n\n");
     int y;
     int x;
@@ -110,7 +110,7 @@ void Start(){ //game
         	
         case 'w':
         case 'W':
-            if (playerY > 1 && map[playerY - 1][playerX] != '*'){        // up
+            if (playerY > 1 && map[playerY - 1][playerX] != '*' && map[playerY - 1][playerX] != '@'){        // up
                 
                 if(map[playerY - 1][playerX] == '#'){
                 	hp--;
@@ -124,7 +124,7 @@ void Start(){ //game
 
         case 'a':
         case 'A':
-            if (playerX > 1 && map[playerY][playerX - 1] != '*'){        // left
+            if (playerX > 1 && map[playerY][playerX - 1] != '*' && map[playerY][playerX - 1] != '@'){        // left
 
                 if(map[playerY][playerX - 1] == '#'){
                 	hp--;
@@ -152,7 +152,7 @@ void Start(){ //game
 
         case 'd':
         case 'D':
-            if (playerX < 15 - 2 && map[playerY][playerX + 1] != '*'){   // right
+            if (playerX < 15 - 2 && map[playerY][playerX + 1] != '*' && map[playerY][playerX + 1] != '@'){   // right
             		
 				if(map[playerY][playerX + 1] == '#'){
                 	hp--;
@@ -166,7 +166,7 @@ void Start(){ //game
 			
 		case 'i':
 		case 'I':
-			if(map[playerY + 1][playerX] == '@') // interaction with the button
+			if(map[playerY + 1][playerX] == '@' || map[playerY - 1][playerX] == '@' || map[playerY][playerX + 1] == '@' || map[playerY][playerX - 1] == '@') // interaction with the button
 			{
 				map[12][1] = ' ';
 				map[7][14] = '=';
