@@ -24,7 +24,7 @@ void Tutorial(){
 	 printf("                                                                @: symbal representing a key\n\n");
 	 printf("                                                                D: symbol representing a close door\n\n");
 	 printf("                                                                =: symbol representing a open door\n\n");
-	 printf("                                                                O: symbol representing a botton that the player can interact\n\n");
+	 printf("                                                                O: symbol representing a button that the player can interact\n\n");
 	 printf("                                                                #: symbol representing a thorn. The player lost hp when he touches it.\n\n");
 	 printf("                                                                >: symbol representing a teleportation\n\n");
 	 printf("                                                                ¬: symbol representing a level 1 monster\n\n");
@@ -166,7 +166,7 @@ void Start(){ //game
 			
 		case 'i':
 		case 'I':
-			if(map[playerY + 1][playerX] == '@')
+			if(map[playerY + 1][playerX] == '@') // interaction with the button
 			{
 				map[12][1] = ' ';
 				map[7][14] = '=';
