@@ -1,8 +1,8 @@
-void playNote(int frequency, int duration) {
+void PlayNote(int frequency, int duration) {
     Beep(frequency, duration);
 }
 
-void playmelody(int tempo) {
+void PlayMelody(int tempo) {
     playNote(440, tempo);
     playNote(415, tempo);
     playNote(440, tempo);
@@ -93,5 +93,5 @@ void playmelody(int tempo) {
 }
 
 int main(void){
-playmelody(1500);
+PlayMelody(1500);
 }
