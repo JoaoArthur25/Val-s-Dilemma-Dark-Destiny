@@ -68,7 +68,7 @@ char map[15][15] = { // map's bidimentional array
     {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '*'},
     {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'},
     {'*', ' ', '*', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', '*', ' ', ' ', '*'},
-    {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'},
+    {'*', '@', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'},
     {'*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*'},
     {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'}
 };
@@ -97,6 +97,7 @@ void Map(){ // draws the map on the screen
 void Start(){ //game 
 	
     char input;
+    char interaction;
     int hp = 5;
     Map();
     printf("\n\n                                                                           HP: %d\n\n", hp);
@@ -104,10 +105,11 @@ void Start(){ //game
     while (hp > 0) // endless loop
     {
         input = getch();             // reads the keyboard key that was pressed
-
+				
         switch (input){
         	
         case 'w':
+        case 'W':
             if (playerY > 1 && map[playerY - 1][playerX] != '*'){        // up
                 
                 if(map[playerY - 1][playerX] == '#'){
@@ -121,6 +123,7 @@ void Start(){ //game
             break;
 
         case 'a':
+        case 'A':
             if (playerX > 1 && map[playerY][playerX - 1] != '*'){        // left
 
                 if(map[playerY][playerX - 1] == '#'){
@@ -134,7 +137,8 @@ void Start(){ //game
             break;
 
         case 's':
-            if (playerY < 15 - 2 && map[playerY + 1][playerX] != '*'){   // down
+        case 'S':
+            if (playerY < 15 - 2 && map[playerY + 1][playerX] != '*' && map[playerY + 1][playerX] != '@' ){   // down
             
                 if(map[playerY + 1][playerX] == '#'){
                 	hp--;
@@ -147,6 +151,7 @@ void Start(){ //game
             break;
 
         case 'd':
+        case 'D':
             if (playerX < 15 - 2 && map[playerY][playerX + 1] != '*'){   // right
             		
 				if(map[playerY][playerX + 1] == '#'){
@@ -158,6 +163,17 @@ void Start(){ //game
 				}	
 			}
 			break;
+			
+		case 'i':
+		case 'I':
+			if(map[playerY + 1][playerX] == '@')
+			{
+				map[12][1] = ' ';
+				map[7][14] = '=';
+			}
+			break;
+			
+		
 		
 		default:
 			break;
