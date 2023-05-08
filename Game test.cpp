@@ -199,7 +199,7 @@ x++;
 	printf("Loading...");
 	intro_music_break++;
 	pthread_join(tid, NULL);
-	system("cls||Clear")
+	system("cls||clear")
 	break;
     }
 	Menu();
