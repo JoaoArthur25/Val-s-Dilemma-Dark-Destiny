@@ -196,9 +196,10 @@ x++;
 
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     printf("\t\t    Let the adventure begin!\n\n");
-	Delay(2000);
-	system("cls||clear");
+	printf("Loading...");
 	intro_music_break++;
+	pthread_join(tid, NULL);
+	system("cls||Clear")
 	break;
     }
 	Menu();
