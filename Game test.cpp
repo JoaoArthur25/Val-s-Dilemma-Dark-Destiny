@@ -46,7 +46,7 @@ void Intro(){
 
 
     while (frame < 600) { 
-        system("cls"); 
+        system("cls||clear"); 
     printf("\n\n Students:\n-Igor 'Radicrow' Acatauassu\n-Joao Arthur 'JoaoArthur25' da Silva\n-Kelton 'KeltonSousa' Sousa\n\n");
       Delay(3000);
     printf("\n        .\\^/.\n");
