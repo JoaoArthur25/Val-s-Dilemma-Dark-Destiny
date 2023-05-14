@@ -454,6 +454,41 @@ void Game1(){ //game
 		printf(".");
 		Delay(3000);
 		printf("\n\n\n                                                                    GAME OVER                                                    \n\n");
+		Delay(2000);
+		int option;
+		system("cls || clear");
+		printf("\n\n\n\n\n\n                                        --------------------------------------------------------------------------------\n");		
+		printf(" \n\n\n\n                                                                      Choose your option:\n\n   ");                              
+		printf("                                                              1. Menu          2. Leave \n\n\n"); 
+		printf("                                         --------------------------------------------------------------------------------\n");  
+		fflush(stdin);
+		scanf("%d", &option);
+		switch(option){
+	
+	case 1:	
+		system("cls || clear");
+	    Beep(650, 150);
+		Menu();
+		break;
+	
+	case 2: 
+		system("cls || clear");
+		printf("\n");
+		printf("Leaving...");
+		Beep(262, 500); 
+	    Beep(196, 500); 
+	    Beep(165, 1000); 
+	    Beep(131, 1000); 
+		return 0;
+	
+	default: 
+		system("cls || clear");
+		printf("\n");
+		printf("Choose a valid option, returning to Menu...");
+		sleep(1);
+		Menu();
+	
+	}
 		return;
 	}
 	
@@ -606,9 +641,45 @@ void Game2(){
 		Delay(500);
 		Delay(3000);
 		printf("\n\n                                                                    GAME OVER                                                         ");
+		Delay(2000);
+		int option;
+		system("cls || clear");
+		printf("\n\n\n\n\n\n                                        --------------------------------------------------------------------------------\n");		
+		printf(" \n\n\n\n                                                                      Choose your option:\n\n   ");                              
+		printf("                                                              1. Menu          2. Leave \n\n\n"); 
+		printf("                                         --------------------------------------------------------------------------------\n");  
+		fflush(stdin);
+		scanf("%d", &option);
+		switch(option){
+	
+	case 1:	
+		system("cls || clear");
+	    Beep(650, 150);
+		Menu();
+		break;
+	
+	case 2: 
+		system("cls || clear");
+		printf("\n");
+		printf("Leaving...");
+		Beep(262, 500); 
+	    Beep(196, 500); 
+	    Beep(165, 1000); 
+	    Beep(131, 1000); 
+		return 0;
+	
+	default: 
+		system("cls || clear");
+		printf("\n");
+		printf("Choose a valid option, returning to Menu...");
+		sleep(1);
+		Menu();
+	
+	}
+		return;	
 	}
 	
-	return;
+	
 }
 
 
@@ -650,7 +721,7 @@ void Menu(){
 	    Beep(196, 500); 
 	    Beep(165, 1000); 
 	    Beep(131, 1000); 
-		return;
+		return 0;
 	
 	default: 
 		system("cls || clear");
