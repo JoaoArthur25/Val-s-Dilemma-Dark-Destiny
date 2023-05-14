@@ -6,8 +6,8 @@
 #include <pthread.h>
 #include <unistd.h>
 
-int playerX = 7; // player's initial position
-int playerY = 7; 
+int playerX = 7; // player's initial x position
+int playerY = 7; // player's initial y position
 
 void Delay(int segundos)
 {
@@ -24,6 +24,11 @@ void playNote(int frequency, int duration) {
 }
 
 void Menu();
+void Game1();
+void Game2();
+void DrawMap1();
+void DrawMap2();
+
 
 int intro_music_break= 0;
 
@@ -41,7 +46,6 @@ void *beep_thread(void *arg){
 	
 }
 
-
 void Intro(){
 	
 	int frame = 0;
@@ -50,23 +54,23 @@ void Intro(){
 
     while (frame < 600) { 
         system("cls||clear"); 
-    printf("\n\n Creators:\n-Igor 'Radicrow' Acatauassu\n-Joao Arthur 'JoaoArthur25' da Silva\n-Kelton 'KeltonSousa' Sousa\n\n");
+    printf("\n\nCreators:\n-Igor 'Radicrow' Acatauassu\n-Joao Arthur 'JoaoArthur25' da Silva\n-Kelton 'KeltonSousa' Sousa\n\n");
       Delay(3000);
-    printf("\n                       .\\^/.\n");
-    printf("                     . |`|/| .\n");
-    printf("                     |\\|\\|'|/|\n");
-    printf("                  .--'-\\`|/-''--.\n");
-    printf("                   \\`-._\\|./.-'/\n");
-    printf("                   >`-._|/.-'<\n");
-    printf("                   '~|/~~|~~\\|~'\n");
-    printf("                         |\n\n");
-    printf("Team Scarlet Dawn presents:\n\n");
+    printf("\n                                                     .\\^/.\n");
+    printf("                                                   . |`|/| .\n");
+    printf("                                                   |\\|\\|'|/|\n");
+    printf("                                                .--'-\\`|/-''--.\n");
+    printf("                                                 \\`-._\\|./.-'/\n");
+    printf("                                                 >`-._|/.-'<\n");
+    printf("                                                 '~|/~~|~~\\|~'\n");
+    printf("                                                       |\n\n");
+    printf("                                         Team Scarlet Dawn presents:\n\n");
   
     
 
 	x++;
 
-        if (x > 10) {
+        if (x > 10){
             x = 0;
         }
 
@@ -80,7 +84,7 @@ void Intro(){
 		 system("cls||clear");
 		  printf("\n\n");
 
-	 pthread_t tid;
+	pthread_t tid;
     pthread_create(&tid, NULL, beep_thread, NULL);
 
 	printf("In a world ruled by a corrupt empire, a dragonborn ex-soldier named Val takes up arms \n");
@@ -186,9 +190,9 @@ void Intro(){
     printf("\n\n");
   
 
-    printf("\t\t             Val's Adventure!  \n\n");
-    printf("\t\t     ----------------------------------\n\n");
-    printf("\t\t         Press any key to begin...\n\n");
+    printf("\t\t                                                Val's Adventure!  \n\n");
+    printf("\t\t                                        ----------------------------------\n\n");
+    printf("\t\t                                              Press any key to begin...\n\n");
 
    
 
@@ -278,10 +282,8 @@ void DrawMap1(){ // draws the map on the screen
     printf("\n\n\n\n\n\n\n");
     int y;
     int x;
-    for (y = 0; y < 15; y++)
-    {
-        for (x = 0; x < 15; x++)
-        {
+    for (y = 0; y < 15; y++){
+        for (x = 0; x < 15; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
                 printf("        &");
@@ -325,32 +327,28 @@ char map2[30][30] = {
 	{'*', '<', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
 	{'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', 'D', '*', '*', '*', '*', '*', '*'},	
 };
-/*void DrawMap2(){ // draws the map on the screen
+void DrawMap2(){ // draws the map on the screen
 
     system("cls || clear"); 
     printf("\n\n\n\n\n\n\n");
     int y;
     int x;
-    for (y = 0; y < 30; y++)
-    {
-        for (x = 0; x < 30; x++)
-        {
+    for (y = 0; y < 30; y++){
+        for (x = 0; x < 30; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
                 printf("        &");
             }
-            if (x == monsterX && y == monsterY){
-            	printf("        K");
-			}
+
             else{
-                printf("        %c", map[y][x]);       // draws the corresponding character on the map
+                printf("        %c", map2[y][x]);       // draws the corresponding character on the map
             }
         }
         printf("\n");
     }
 }
-*/
-void Start(){ //game 
+
+void Game1(){ //game 
 	
     char input;
     char interaction;
@@ -443,15 +441,174 @@ void Start(){ //game
     
     if(map1[playerY][playerX] == '=')
 		{
+			Game2();
+		}
+}
+
+	if(hp == 0)
+	{
+		printf("\n\n\n        Val's strength was not enough to overcome the dungeon's challenges and claim the artifact, now she lies dead in the depths of the dungeon.");
+		Delay(500);
+		printf(".");
+		Delay(500);
+		printf(".");
+		Delay(3000);
+		printf("\n\n\n                                                                    GAME OVER                                                    \n\n");
+		return;
+	}
+	
+}
+
+void Game2(){
+	char input;
+    char interaction;
+    int hp = 5;
+    playerX = 14;
+    playerY = 14;
+    DrawMap2();
+    printf("\n\n                                                                           HP: %d\n\n", hp);
+
+    while (hp > 0) // endless loop
+    {
+		srand(time(NULL));
+		input = getch();             // reads the keyboard key that was pressed
+				
+        switch (input){
+        	
+        case 'w':
+        case 'W':
+            if (playerY > 1 && map2[playerY - 1][playerX] != '*' && map2[playerY - 1][playerX] != '@' && map2[playerY - 1][playerX] != 'D'){        // up
+                
+                if(map2[playerY - 1][playerX] == '#'){
+                	hp--;
+                	playerX = 14, playerY = 14;
+				}
+				else{
+					playerY--;
+				}	
+				
+				if(map2[playerY][playerX] == 'O')
+				{
+					map2[29][23] = '=';
+				}
+				
+				if(map2[playerY][playerX] == '>')
+				{
+					playerX = 1, playerY = 28;
+				}
+            }
+            break;
+
+        case 'a':
+        case 'A':
+            if (playerX > 1 && map2[playerY][playerX - 1] != '*' && map2[playerY][playerX - 1] != '@' && map2[playerY][playerX - 1] != 'D'){        // left
+
+                if(map2[playerY][playerX - 1] == '#'){
+                	hp--;
+                	playerX = 14, playerY = 14;
+				}
+				else{
+					playerX--;
+				}
+				
+				if(map2[playerY][playerX] == 'O')
+				{
+					map2[29][23] = '=';
+				}	
+				
+				if(map2[playerY][playerX] == '<')
+				{
+					playerX = 28, playerY = 1;
+				}
+            }
+            break;
+
+        case 's':
+        case 'S':
+            if (playerY < 29 && map2[playerY + 1][playerX] != '*' && map2[playerY + 1][playerX] != '@' && map2[playerY + 1][playerX] != 'D'){   // down
+            
+                if(map2[playerY + 1][playerX] == '#'){
+                	hp--;
+                	playerX = 14, playerY =14;
+				}
+				else{
+					playerY++;
+				}
+				
+				if(map2[playerY][playerX] == 'O')
+				{
+					map2[29][23] = '=';
+				}
+				
+				if(map2[playerY][playerX] == '<')
+				{
+					playerX = 28, playerY = 1;
+				}
+            }
+            break;
+
+        case 'd':
+        case 'D':
+            if (playerX < 29 && map2[playerY][playerX + 1] != '*' && map2[playerY][playerX + 1] != '@' && map2[playerY][playerX + 1] != 'D'){   // right
+            		
+				if(map2[playerY][playerX + 1] == '#'){
+                	hp--;
+                	playerX = 14, playerY = 14;
+				}
+				else{
+					playerX++;
+				}	
+				
+				if(map2[playerY][playerX] == 'O')
+				{
+					map2[29][23] = '=';
+				}
+				
+				if(map2[playerY][playerX] == '>')
+				{
+					playerX = 1, playerY = 28;
+				}
+				
+			}
+			break;
+			
+		case 'i':
+		case 'I':
+			if(map2[playerY + 1][playerX] == '@' || map2[playerY - 1][playerX] == '@' || map2[playerY][playerX + 1] == '@' || map2[playerY][playerX - 1] == '@') // interaction with the button
+			{
+				map2[12][1] = ' ';
+				map2[7][14] = '=';
+				Beep(650, 150);
+			}
+			break;
+			
+		
+		
+		default:
+			break;
+			
+	}
+	DrawMap2();
+    printf("\n\n                                                                     HP: %d\n", hp);
+    
+    if(map2[playerY][playerX] == '=')
+		{
 			break;
 		}
 }
 
 	if(hp == 0)
 	{
-		printf("\n\n\n                                                                    Game Over                                                    \n\n");
+		printf("\n\n\n        Val's strength was not enough to overcome the dungeon's challenges and claim the artifact, now she lies dead in the depths of the dungeon.");
+		printf(".");
+		Delay(500);
+		printf(".");
+		Delay(500);
+		Delay(3000);
+		printf("\n\n                                                                    GAME OVER                                                         ");
 	}
-	return 0;
+	
+	return;
 }
 
 
@@ -476,7 +633,7 @@ void Menu(){
 	case 1:	
 		system("cls || clear");
 	    Beep(650, 150);
-		Start();
+		Game1();
 		break;
 	
 	case 2: 
@@ -493,7 +650,7 @@ void Menu(){
 	    Beep(196, 500); 
 	    Beep(165, 1000); 
 	    Beep(131, 1000); 
-		return 0;
+		return;
 	
 	default: 
 		system("cls || clear");
