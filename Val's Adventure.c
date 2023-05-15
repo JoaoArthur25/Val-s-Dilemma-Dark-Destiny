@@ -337,11 +337,11 @@ void DrawMap2(){ // draws the map on the screen
         for (x = 0; x < 30; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
-                printf("        &");
+                printf("   &");
             }
 
             else{
-                printf("        %c", map2[y][x]);       // draws the corresponding character on the map
+                printf("   %c", map2[y][x]);       // draws the corresponding character on the map
             }
         }
         printf("\n");
