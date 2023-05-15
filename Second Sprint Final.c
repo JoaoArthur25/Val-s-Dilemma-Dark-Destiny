@@ -232,7 +232,7 @@ void Intro(){
     }
 
     printf("\n\n\n\n\n");
-    printf("\t\t         Let the adventure begin!\n\n");
+    printf("\t\t                                              Let the adventure begin!\n\n");
 	printf("Loading...");
 	intro_music_break++;
 	pthread_join(tid, NULL);
@@ -262,7 +262,7 @@ void Tutorial(){
 	 printf("                                                                O: symbol representing a button that the player can interact\n");
 	 printf("                                                                #: symbol representing a thorn. The player lost hp when he touches it.\n");
 	 printf("                                                                >: symbol representing a teleportation\n");
-	 printf("                                                                ¬: symbol representing a level 1 monster\n");
+	 printf("                                                                Â¬: symbol representing a level 1 monster\n");
 	 printf("                                                                k: symbol representing a level 2 monster\n\n");
 	 printf("                                                                Press M to go back to the Menu: \n\n\n   ");  
 	 
