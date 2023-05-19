@@ -6,6 +6,9 @@
 #include <pthread.h>
 #include <unistd.h>
 
+
+int monster1X, monster1Y, monster1X_2, monster1Y_2, monster1X_3, monster1Y_3, monster2X, monster2Y;
+
 int playerX = 13; // player's initial x position
 int playerY = 1; // player's initial y position
 int monsterX = 7; // monster's initial x position
@@ -29,6 +32,7 @@ void playNote(int frequency, int duration) {
 int Menu();
 int Game1();
 int Game2();
+int Game3();
 void DrawMap1();
 void DrawMap2();
 void DrawMap3();
@@ -64,10 +68,10 @@ void *dungeon_music(void *arg){
 }
 }
 
-int lvl_3__music_break = 0;
+int lvl_3_music_break = 0;
 
 void *lvl_3_music(void *arg){
-	while(lvl_3__music_break == 0){
+	while(lvl_3_music_break == 0){
 	playNote(277, 500);
     playNote(311, 500);
     playNote(294, 500);
@@ -317,10 +321,10 @@ void DrawMap1(){ // draws the map on the screen
         for (x = 0; x < 15; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
-                printf("        &");
+                printf("& ");
             }
             else{
-                printf("        %c", map1[y][x]);       // draws the corresponding character on the map
+                printf("%c ", map1[y][x]);       // draws the corresponding character on the map
             }
         }
         printf("\n");
@@ -330,7 +334,7 @@ char map2[30][30] = {
 	{'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#', '#', '*'},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
-	{'*', ' ', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '='},
+	{'*', ' ', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'D'},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#', '#', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
@@ -368,16 +372,16 @@ void DrawMap2(){ // draws the map on the screen
         for (x = 0; x < 30; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
-                printf("    &");
+                printf("& ");
             }
 			
 			else if(x == monster1X && y == monster1Y){
 			
-				printf("    K");
+				printf("K ");
 			}
 			
             else{
-                printf("    %c", map2[y][x]);       // draws the corresponding character on the map
+                printf("%c ", map2[y][x]);       // draws the corresponding character on the map
             }
         }
         printf("\n");
@@ -449,35 +453,35 @@ char map3[60][60] = {
 void DrawMap3(){ // draws the map on the screen
 
     system("cls || clear"); 
-    printf("\n\n\n\n\n\n\n");
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
     int y;
     int x;
     for (y = 0; y < 60; y++){
         for (x = 0; x < 60; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
-                printf("    &");
+                printf("& ");
             }
 			
 			else if(x == monster2X && y == monster2Y){
 			
-				printf("    K");
+				printf("K ");
 			}
 			else if(x == monster1X && y == monster1Y){
 				
-				printf("    W");
+				printf("W ");
 			}
 			else if(x == monster1X_2  && y == monster1Y_2){
 				
-				printf("    W");
+				printf("W ");
 			}
 			else if(x == monster1X_3 && y == monster1Y_3){
 				
-				printf("    W");
+				printf("W ");
 			}
 			else{
 			
-                printf("    %c", map3[y][x]);       // draws the corresponding character on the map
+                printf("%c ", map3[y][x]);       // draws the corresponding character on the map
             }
         }
         printf("\n");
@@ -485,7 +489,7 @@ void DrawMap3(){ // draws the map on the screen
 }
 
 int Game1(){ //game 
-
+dungeon_music_break = 0;
 	pthread_t tid_2;
     pthread_create(&tid_2, NULL, dungeon_music, NULL);
     
@@ -599,6 +603,7 @@ int Game1(){ //game
 
 	if(hp == 0)
 	{
+
 		printf("\n\n\n        Val's strength was not enough to overcome the dungeon's challenges and claim the artifact, now she lies dead in the depths of the dungeon.");
 		Delay(500);
 		printf(".");
@@ -608,6 +613,8 @@ int Game1(){ //game
 		printf("\n\n\n                                                                    GAME OVER                                                    \n\n");
 		Delay(2000);
 		int option;
+		dungeon_music_break++;
+		pthread_join(tid_2, NULL);
 		system("cls || clear");
 		printf("\n\n\n\n\n\n                                        --------------------------------------------------------------------------------\n");		
 		printf(" \n\n\n\n                                                                      Choose your option:\n\n   ");                              
@@ -647,7 +654,7 @@ int Game1(){ //game
 }
 
 int Game2(){
-	dungeon_music_break--;
+	dungeon_music_break = 0;
 	pthread_t tid_2;
     pthread_create(&tid_2, NULL, dungeon_music, NULL);
     
@@ -993,6 +1000,8 @@ int Game2(){
 		printf("\n\n                                                                    GAME OVER                                                         ");
 		Delay(2000);
 		int option;
+		dungeon_music_break++;
+		pthread_join(tid_2, NULL);
 		system("cls || clear");
 		printf("\n\n\n\n\n\n                                        --------------------------------------------------------------------------------\n");		
 		printf(" \n\n\n\n                                                                      Choose your option:\n\n   ");                              
@@ -1033,9 +1042,9 @@ int Game2(){
 }
 
 int Game3(){
-	dungeon_music_break--;
-	pthread_t tid_2;
-    pthread_create(&tid_2, NULL, dungeon_music, NULL);
+	lvl_3_music_break = 0;
+	pthread_t tid_3;
+    pthread_create(&tid_3, NULL, lvl_3_music, NULL);
     
 	char input;
     char interaction;
@@ -1587,8 +1596,8 @@ int Game3(){
     
     if(map3[playerY][playerX] == '=')
 		{
-	dungeon_music_break++;
-	pthread_join(tid_2, NULL);
+	lvl_3_music_break++;
+	pthread_join(tid_3, NULL);
 	system("cls||clear");
 	break;
 		}
@@ -1597,6 +1606,8 @@ int Game3(){
 
 	if(hp == 0)
 	{
+		lvl_3_music_break++;
+		pthread_join(tid_3, NULL);
 		printf("\n\n\n        Val's strength was not enough to overcome the dungeon's challenges and claim the artifact, now she lies dead in the depths of the dungeon.");
 		printf(".");
 		Delay(500);
