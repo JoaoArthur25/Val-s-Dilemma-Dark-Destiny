@@ -6,7 +6,10 @@
 #include <pthread.h>
 #include <unistd.h>
 
-int playerX, playerY, monster1X, monster1Y, monster1X_2, monster1Y_2, monster1X_3, monster1Y_3, monster2X, monster2Y;
+int playerX = 13; // player's initial x position
+int playerY = 1; // player's initial y position
+int monsterX = 7; // monster's initial x position
+int monsterY = 27; // monster's initial y position
 
 
 void Delay(int segundos)
@@ -26,7 +29,6 @@ void playNote(int frequency, int duration) {
 int Menu();
 int Game1();
 int Game2();
-int Game3();
 void DrawMap1();
 void DrawMap2();
 void DrawMap3();
@@ -297,7 +299,7 @@ char map1[15][15] = { // map's bidimentional array
     {'*', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '#', ' ', ' ', '*'},
     {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', ' ', '*'},
     {'*', ' ', '*', '*', ' ', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', '*'},
-    {'*', ' ', '*', '*', ' ', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'D'},
+    {'*', ' ', '*', '*', ' ', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '='},
     {'*', ' ', '*', '*', ' ', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
     {'*', ' ', '*', '*', ' ', ' ', '*', ' ', ' ', ' ', ' ', ' ', '#', ' ', '*'},
     {'*', ' ', '*', '*', ' ', ' ', '*', ' ', ' ', '*', '*', '*', ' ', ' ', '*'},
@@ -328,7 +330,7 @@ char map2[30][30] = {
 	{'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#', '#', '*'},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
-	{'*', ' ', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'D'},
+	{'*', ' ', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '='},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
 	{'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', '#', '#', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
@@ -1316,24 +1318,28 @@ int Game3(){
 					playerX = 40;
 					playerY = 35;
 				}
-				{
 				
-				if(playerY == monster1Y_2 && playerX == monster1X_2)
+				if(playerY == monster1Y && playerX == monster1X)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster1Y_3 && playerX == monster1X_3)
+				else if(playerY == monster1Y_2 && playerX == monster1X_2)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster2Y && playerX == monster2X)
+				else if(playerY == monster1Y_3 && playerX == monster1X_3)
+				{
+					playerX = 29, playerY = 58;
+						hp--;
+				}
+				else if(playerY == monster2Y && playerX == monster2X)
 				{
 					
-						playerX = 29, playerY = 58;
+					playerX = 29, playerY = 58;
 						hp--;
-			}
+				}
             }
             break;
 
@@ -1388,17 +1394,17 @@ int Game3(){
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster1Y_2 && playerX == monster1X_2)
+				else if(playerY == monster1Y_2 && playerX == monster1X_2)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster1Y_3 && playerX == monster1X_3)
+				else if(playerY == monster1Y_3 && playerX == monster1X_3)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster2Y && playerX == monster2X)
+				else if(playerY == monster2Y && playerX == monster2X)
 				{
 					
 						playerX = 29, playerY = 58;
@@ -1458,17 +1464,17 @@ int Game3(){
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster1Y_2 && playerX == monster1X_2)
+				else if(playerY == monster1Y_2 && playerX == monster1X_2)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster1Y_3 && playerX == monster1X_3)
+				else if(playerY == monster1Y_3 && playerX == monster1X_3)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster2Y && playerX == monster2X)
+				else if(playerY == monster2Y && playerX == monster2X)
 				{
 					
 						playerX = 29, playerY = 58;
@@ -1543,22 +1549,23 @@ int Game3(){
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster1Y_2 && playerX == monster1X_2)
+				else if(playerY == monster1Y_2 && playerX == monster1X_2)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster1Y_3 && playerX == monster1X_3)
+				else if(playerY == monster1Y_3 && playerX == monster1X_3)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				if(playerY == monster2Y && playerX == monster2X)
+				else if(playerY == monster2Y && playerX == monster2X)
 				{
 					
 						playerX = 29, playerY = 58;
 						hp--;
 				}
+			}
 			break;
 			
 			case 'i':
@@ -1570,8 +1577,6 @@ int Game3(){
 				Beep(650, 150);
 			}
 			break;
-			
-	}
 		
 		default:
 			break;
@@ -1638,7 +1643,7 @@ int Game3(){
 	}
 }
 	
-}
+
 
 
 
