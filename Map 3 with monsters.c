@@ -91,7 +91,7 @@ void Intro(){
     while (frame < 600) { 
         system("cls||clear"); 
     printf("\n\nCreators:\n-Igor 'Radicrow' Acatauassu\n-Joao Arthur 'JoaoArthur25' da Silva\n-Kelton 'KeltonSousa' Sousa\n\n");
-      Delay(3000);
+      //Delay(3000);
     printf("\n                                                     .\\^/.\n");
     printf("                                                   . |`|/| .\n");
     printf("                                                   |\\|\\|'|/|\n");
@@ -113,9 +113,9 @@ void Intro(){
         Sleep(50);
 
         frame++;
-        Delay(4000);
+        //Delay(4000);
          printf("Loading game...");
-		 Delay(2000);
+		 //Delay(2000);
 		 
 		 system("cls||clear");
 		  printf("\n\n");
@@ -126,7 +126,7 @@ void Intro(){
 	printf("In a world ruled by a corrupt empire, a dragonborn ex-soldier named Val takes up arms \n");
 	printf("against the forces of tyranny. She has seen the atrocities committed by the empire firsthand,\n");
 	printf("and she is determined to put an end to their reign of terror.\n");
-	Delay(6000);
+	//Delay(6000);
 	printf(".");
 	Delay(500);
 	printf(".");
@@ -136,7 +136,7 @@ void Intro(){
 	printf("Many have tried to claim this artifact before, but none have returned to tell the tale. Despite \n");
 	printf("the risks, Val sees this as an opportunity to gain an edge against the empire and bring them \n");
 	printf("to their knees.\n");
-	Delay(6000);
+	//Delay(6000);
 	printf(".");
 	Delay(500);
 	printf(".");
@@ -147,7 +147,7 @@ void Intro(){
 	printf("and claim the artifact for herself. But she soon realizes that the dangers she faces are greater \n");
 	printf("than she ever imagined. Deadly traps, fierce monsters and dark magic stand in her way, she \n");
 	printf("she must use all her skills and cunning to survive.\n");
-	Delay(6000);
+	//Delay(6000);
 	printf(".");
 	Delay(1000);
 	printf(".");
@@ -156,7 +156,7 @@ void Intro(){
 	printf("Will Val be able to overcome the challenges of the dungeon and claim the artifact? And if she \n");
 	printf("does, will it be enough to help her achieve her ultimate goal of taking down the corrupt\n");
 	printf("empire? Only time will tell...\n");
-	Delay(6000);
+	//Delay(6000);
 
 	
 	
@@ -303,7 +303,7 @@ char map1[15][15] = { // map's bidimentional array
     {'*', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', '#', ' ', ' ', '*'},
     {'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', ' ', '*'},
     {'*', ' ', '*', '*', ' ', '*', '*', '*', '*', '*', '*', ' ', ' ', ' ', '*'},
-    {'*', ' ', '*', '*', ' ', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '='},
+    {'*', ' ', '*', '*', ' ', '*', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'D'},
     {'*', ' ', '*', '*', ' ', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
     {'*', ' ', '*', '*', ' ', ' ', '*', ' ', ' ', ' ', ' ', ' ', '#', ' ', '*'},
     {'*', ' ', '*', '*', ' ', ' ', '*', ' ', ' ', '*', '*', '*', ' ', ' ', '*'},
@@ -321,10 +321,10 @@ void DrawMap1(){ // draws the map on the screen
         for (x = 0; x < 15; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
-                printf("& ");
+                printf("  & ");
             }
             else{
-                printf("%c ", map1[y][x]);       // draws the corresponding character on the map
+                printf("  %c ", map1[y][x]);       // draws the corresponding character on the map
             }
         }
         printf("\n");
@@ -377,7 +377,7 @@ void DrawMap2(){ // draws the map on the screen
 			
 			else if(x == monster1X && y == monster1Y){
 			
-				printf("K ");
+				printf("W ");
 			}
 			
             else{
@@ -498,6 +498,10 @@ dungeon_music_break = 0;
     playerX = 13; // player's initial x position
 	playerY = 1; // player's initial y position
     int hp = 5;
+    map1[7][14] = 'D';
+	map1[12][1] = '@';
+	map1[3][2] = '#';
+	map1[4][2] = '#';
     DrawMap1();
     printf("\n\n                                                                           HP: %d\n\n", hp);
 
@@ -596,6 +600,10 @@ dungeon_music_break = 0;
 	pthread_join(tid_2, NULL);
 	system("cls||clear");
 			Game2();
+			map1[7][14] = 'D';
+			map1[12][1] = '@';
+			map1[3][2] = '#';
+			map1[4][2] = '#';
 			break;
 		}
 		
@@ -627,6 +635,10 @@ dungeon_music_break = 0;
 	case 1:	
 		system("cls || clear");
 	    Beep(650, 150);
+	    map1[7][14] = 'D';
+		map1[12][1] = '@';
+		map1[3][2] = '#';
+		map1[4][2] = '#';
 		Menu();
 		break;
 	
@@ -645,6 +657,10 @@ dungeon_music_break = 0;
 		printf("\n");
 		printf("Choose a valid option, returning to Menu...");
 		sleep(1);
+		map1[7][14] = 'D';
+		map1[12][1] = '@';
+		map1[3][2] = '#';
+		map1[4][2] = '#';
 		Menu();
 	
 	}
@@ -667,6 +683,14 @@ int Game2(){
     playerY = 3;
     monster1X = 7;
     monster1Y = 27;
+    map2[3][1] = ' ';
+	map2[5][13] = ' ';
+	map2[24][1] = ' ';
+	map2[24][2] = ' ';
+	map2[7][28] = '#';
+	map2[7][27] = '#';
+	map2[26][1] = '@';
+	map2[3][29] = 'D';
     DrawMap2();
     printf("\n\n                                                                           HP: %d\n\n", hp);
 
@@ -983,6 +1007,14 @@ int Game2(){
 	dungeon_music_break++;
 	pthread_join(tid_2, NULL);
 	system("cls||clear");
+	map2[3][1] = ' ';
+	map2[5][13] = ' ';
+	map2[24][1] = ' ';
+	map2[24][2] = ' ';
+	map2[7][28] = '#';
+	map2[7][27] = '#';
+	map2[26][1] = '@';
+	map2[3][29] = 'D';
 	Game3();
 	break;
 		}
@@ -1014,6 +1046,14 @@ int Game2(){
 	case 1:	
 		system("cls || clear");
 	    Beep(650, 150);
+	    map2[3][1] = ' ';
+		map2[5][13] = ' ';
+		map2[24][1] = ' ';
+		map2[24][2] = ' ';
+		map2[7][28] = '#';
+		map2[7][27] = '#';
+		map2[26][1] = '@';
+		map2[3][29] = 'D';
 		Menu();
 		break;
 	
@@ -1032,6 +1072,14 @@ int Game2(){
 		printf("\n");
 		printf("Choose a valid option, returning to Menu...");
 		sleep(1);
+		map2[3][1] = ' ';
+		map2[5][13] = ' ';
+		map2[24][1] = ' ';
+		map2[24][2] = ' ';
+		map2[7][28] = '#';
+		map2[7][27] = '#';
+		map2[26][1] = '@';
+		map2[3][29] = 'D';
 		Menu();
 	
 	}
@@ -1060,7 +1108,19 @@ int Game3(){
     monster1X = 15;
     monster1Y = 39;
     monster2X = 29;
-    monster2Y = 21;
+    monster2Y = 17;
+    map3[36][15] = '@';
+	map3[59][39] = 'D';
+	map3[17][31] = '#';
+	map3[17][32] = '#';
+	map3[17][33] = '#';
+	map3[7][21] = '#';
+	map3[8][21] = '#';
+	map3[9][21] = '#';
+	map3[10][21] = '#';
+	map3[22][34] = '#';
+	map3[23][34] = '#';
+	map3[24][34] = '#';
     DrawMap3();
     printf("\n\n                                                                           HP: %d\n\n", hp);
 
@@ -1327,28 +1387,27 @@ int Game3(){
 					playerX = 40;
 					playerY = 35;
 				}
-				
+				if(playerY == monster2Y && playerX + 1 == monster2X)
+				{
+					playerX = 29, playerY = 58;
+					hp--;
+				}
 				if(playerY == monster1Y && playerX == monster1X)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster1Y_2 && playerX == monster1X_2)
+				if(playerY == monster1Y_2 && playerX == monster1X_2)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster1Y_3 && playerX == monster1X_3)
+				if(playerY == monster1Y_3 && playerX == monster1X_3)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster2Y && playerX == monster2X)
-				{
-					
-					playerX = 29, playerY = 58;
-						hp--;
-				}
+				
             }
             break;
 
@@ -1397,28 +1456,27 @@ int Game3(){
 					playerX = 40;
 					playerY = 35;
 				}
-				
+				if(playerY == monster2Y && playerX + 1 == monster2X)
+				{
+					playerX = 29, playerY = 58;
+					hp--;
+				}
 				if(playerY == monster1Y && playerX == monster1X)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster1Y_2 && playerX == monster1X_2)
+				if(playerY == monster1Y_2 && playerX == monster1X_2)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster1Y_3 && playerX == monster1X_3)
+				if(playerY == monster1Y_3 && playerX == monster1X_3)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster2Y && playerX == monster2X)
-				{
-					
-						playerX = 29, playerY = 58;
-						hp--;
-				}
+				
             }
             break;
 
@@ -1468,27 +1526,27 @@ int Game3(){
 					playerY = 35;
 				}
 				
+				if(playerY == monster2Y && playerX + 1 == monster2X)
+				{
+					playerX = 29, playerY = 58;
+					hp--;
+				}
 				if(playerY == monster1Y && playerX == monster1X)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster1Y_2 && playerX == monster1X_2)
+				if(playerY == monster1Y_2 && playerX == monster1X_2)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster1Y_3 && playerX == monster1X_3)
+				if(playerY == monster1Y_3 && playerX == monster1X_3)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster2Y && playerX == monster2X)
-				{
-					
-						playerX = 29, playerY = 58;
-						hp--;
-				}
+				
             }
             break;
 
@@ -1541,39 +1599,39 @@ int Game3(){
 					map3[24][34] = ' ';
 				}
 				
-				else if(playerX == 40 && playerY == 35 && map3[playerY][playerX] == '<')
+				if(playerX == 40 && playerY == 35 && map3[playerY][playerX] == '<')
 				{
 					playerX = 12;
 					playerY = 51;
 				}
 				
-				else if(playerX == 12 && playerY == 51 && map3[playerY][playerX] == '>')
+				if(playerX == 12 && playerY == 51 && map3[playerY][playerX] == '>')
 				{
 					playerX = 40;
 					playerY = 35;
 				}
 				
+				if(playerY == monster2Y && playerX + 1 == monster2X)
+				{
+					playerX = 29, playerY = 58;
+					hp--;
+				}
 				if(playerY == monster1Y && playerX == monster1X)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster1Y_2 && playerX == monster1X_2)
+				if(playerY == monster1Y_2 && playerX == monster1X_2)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster1Y_3 && playerX == monster1X_3)
+				if(playerY == monster1Y_3 && playerX == monster1X_3)
 				{
 					playerX = 29, playerY = 58;
 						hp--;
 				}
-				else if(playerY == monster2Y && playerX == monster2X)
-				{
-					
-						playerX = 29, playerY = 58;
-						hp--;
-				}
+				
 			}
 			break;
 			
@@ -1594,13 +1652,24 @@ int Game3(){
 	DrawMap3();
     printf("\n\n                                                                     HP: %d\n", hp);
     
-    if(map3[playerY][playerX] == '=')
-		{
-	lvl_3_music_break++;
-	pthread_join(tid_3, NULL);
-	system("cls||clear");
-	break;
-		}
+    if(map3[playerY][playerX] == '='){
+		map3[36][15] = '@';
+		map3[59][39] = 'D';
+		map3[17][31] = '#';			
+		map3[17][32] = '#';
+		map3[17][33] = '#';
+		map3[7][21] = '#';
+		map3[8][21] = '#';
+		map3[9][21] = '#';
+		map3[10][21] = '#';
+		map3[22][34] = '#';
+		map3[23][34] = '#';
+		map3[24][34] = '#';
+		lvl_3_music_break++;
+		pthread_join(tid_3, NULL);
+		system("cls||clear");
+		break;
+	}
 		
 }
 
@@ -1629,6 +1698,18 @@ int Game3(){
 	case 1:	
 		system("cls || clear");
 	    Beep(650, 150);
+	    map3[36][15] = '@';
+		map3[59][39] = 'D';
+		map3[17][31] = '#';			
+		map3[17][32] = '#';
+		map3[17][33] = '#';
+		map3[7][21] = '#';
+		map3[8][21] = '#';
+		map3[9][21] = '#';
+		map3[10][21] = '#';
+		map3[22][34] = '#';
+		map3[23][34] = '#';
+		map3[24][34] = '#';
 		Menu();
 		break;
 	
@@ -1647,6 +1728,18 @@ int Game3(){
 		printf("\n");
 		printf("Choose a valid option, returning to Menu...");
 		sleep(1);
+		map3[36][15] = '@';
+		map3[59][39] = 'D';
+		map3[17][31] = '#';			
+		map3[17][32] = '#';
+		map3[17][33] = '#';
+		map3[7][21] = '#';
+		map3[8][21] = '#';
+		map3[9][21] = '#';
+		map3[10][21] = '#';
+		map3[22][34] = '#';
+		map3[23][34] = '#';
+		map3[24][34] = '#';
 		Menu();
 	
 	}
