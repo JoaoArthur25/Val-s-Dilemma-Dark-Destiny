@@ -2057,6 +2057,6 @@ int Menu(){
 
 int main(){
 	
-Game4();
+Intro();
 return 0;
 }
