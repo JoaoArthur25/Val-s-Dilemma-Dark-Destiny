@@ -6,9 +6,15 @@
 #include <pthread.h>
 #include <unistd.h>
 
+#define GREEN   "\x1b[32m"
+#define GOLD "\x1b[38;5;214m"
+#define ORANGE "\x1b[38;5;202m"
+#define BLUE    "\x1b[34m"
+#define SCARLET_RED "\x1b[38;2;220;20;60m"
+#define PURPLE "\x1b[35;1m"
+#define RESET "\x1b[0m"
 
-int monster1X, monster1Y, monster1X_2, monster1Y_2, monster1X_3, monster1Y_3, monster2X, monster2Y, monster3X, monster3Y;
-
+int monster1X, monster1Y, monster1X_2, monster1Y_2, monster1X_3, monster1Y_3, monster2X, monster2Y, monster3X, monster3Y; 
 int playerX = 13; // player's initial x position
 int playerY = 1; // player's initial y position
 int monsterX = 7; // monster's initial x position
@@ -92,15 +98,15 @@ void Intro(){
     while (frame < 600) { 
         system("cls||clear"); 
     printf("\n\nCreators:\n-Igor 'Radicrow' Acatauassu\n-Joao Arthur 'JoaoArthur25' da Silva\n-Kelton 'KeltonSousa' Sousa\n\n");
-      //Delay(3000);
-    printf("\n                                                     .\\^/.\n");
-    printf("                                                   . |`|/| .\n");
-    printf("                                                   |\\|\\|'|/|\n");
-    printf("                                                .--'-\\`|/-''--.\n");
-    printf("                                                 \\`-._\\|./.-'/\n");
-    printf("                                                 >`-._|/.-'<\n");
-    printf("                                                 '~|/~~|~~\\|~'\n");
-    printf("                                                       |\n\n");
+    Delay(3000);
+    printf("%s\n                                                     .\\^/.\n%s", SCARLET_RED, RESET);
+	printf("%s                                                   . |`|/| .\n%s", SCARLET_RED, RESET);
+	printf("%s                                                   |\\|\\|'|/|\n%s", SCARLET_RED, RESET);
+	printf("%s                                                .--'-\\`|/-''--.\n%s", SCARLET_RED, RESET);
+	printf("%s                                                 \\`-._\\|./.-'/\n%s", SCARLET_RED, RESET);
+	printf("%s                                                 >`-._|/.-'<\n%s", SCARLET_RED, RESET);
+	printf("%s                                                 '~|/~~|~~\\|~'\n%s", SCARLET_RED, RESET);
+	printf("%s                                                       |\n%s\n\n", SCARLET_RED, RESET);
     printf("                                         Team Scarlet Dawn presents:\n\n");
   
     
@@ -114,9 +120,9 @@ void Intro(){
         Sleep(50);
 
         frame++;
-        //Delay(4000);
+        Delay(4000);
          printf("Loading game...");
-		 //Delay(2000);
+		 Delay(2000);
 		 
 		 system("cls||clear");
 		  printf("\n\n");
@@ -127,7 +133,7 @@ void Intro(){
 	printf("In a world ruled by a corrupt empire, a dragonborn ex-soldier named Val takes up arms \n");
 	printf("against the forces of tyranny. She has seen the atrocities committed by the empire firsthand,\n");
 	printf("and she is determined to put an end to their reign of terror.\n");
-	//Delay(6000);
+	Delay(10000);
 	printf(".");
 	Delay(500);
 	printf(".");
@@ -137,7 +143,7 @@ void Intro(){
 	printf("Many have tried to claim this artifact before, but none have returned to tell the tale. Despite \n");
 	printf("the risks, Val sees this as an opportunity to gain an edge against the empire and bring them \n");
 	printf("to their knees.\n");
-	//Delay(6000);
+	Delay(10000);
 	printf(".");
 	Delay(500);
 	printf(".");
@@ -148,7 +154,7 @@ void Intro(){
 	printf("and claim the artifact for herself. But she soon realizes that the dangers she faces are greater \n");
 	printf("than she ever imagined. Deadly traps, fierce monsters and dark magic stand in her way, she \n");
 	printf("she must use all her skills and cunning to survive.\n");
-	//Delay(6000);
+	Delay(10000);
 	printf(".");
 	Delay(1000);
 	printf(".");
@@ -157,77 +163,78 @@ void Intro(){
 	printf("Will Val be able to overcome the challenges of the dungeon and claim the artifact? And if she \n");
 	printf("does, will it be enough to help her achieve her ultimate goal of taking down the corrupt\n");
 	printf("empire? Only time will tell...\n");
-	//Delay(6000);
+	Delay(10000);
 
 	
 	
 	
 	system("cls||clear");
 
-   printf("                                                                 .:!!##################!!:.                                                                 \n");
-   Delay(100);
-   printf("                                                         .:#########!..              .:!#########:.                                                          \n");
-	Delay(100);
-   printf("                                                    .!#####!:.                                .:!#####!.                                                     \n");
-    Delay(100);
-   printf("                                                .!#####:                                            :!####!.                                                 \n");
-   Delay(100);
-   printf("                                              !####:                           .#                       :####!                                               \n");
-   Delay(100);
-   printf("                                           :####.                            :###.     .....::::!!!!###:   .####:                                            \n");
-   Delay(100);
-   printf("                                         !###:                            :#####:  .!###############!.     .!#####!                                          \n");
-   Delay(100);
-   printf("                                       !###:                          .#######!   !########!:.       .:!############:                                        \n");
-   Delay(100);
-   printf("                                     :###!.                      .:#########!.             .!!###################:!###.                                      \n");
-   Delay(100);
-   printf("                                    :###:                     :############################!!..  .:########!:.    .####:                                     \n");
-   Delay(100);
-   printf("                                   !###.                   .######################################:         ..!#########:                                    \n");
-   Delay(100);
-   printf("                                  .###:                  !############################################.  .###############.                                  \n");
-   Delay(100);
-   printf("                                  !##!               .:#################################################!.  :###!:..  !##!                                  \n");
-   Delay(100);
-   printf("                                 .###:            .!########:  :########################!!!!###########.   ....:::!#######.                                 \n");
-   Delay(100);
-   printf("                                 :###.              !####!..!################!:.  .:!#######!:.   :!######:  .!###########:                                 \n");
-   Delay(100);
-   printf("                                 .###.            .#########################!.   .:!!::.   .:#####!.   .!#####!:..    :###.                                 \n");
-   Delay(100);
-   printf("                                 .###:      .   .!########################!         .!######.  .!#####!.              :###                                  \n");
-   Delay(100);
-   printf("                                  :###     .#############################:             :######!.  :#######:    !#########:                                  \n");
-   Delay(100);
-   printf("                                  .!###    :###############!::!!##:      .              .#####!     :########!.   .:!###!.                                  \n");
-   Delay(100);
-   printf("                                   .###!.  .###########:                                :##!  .###:   :##!!#####!   !###                                    \n");
-   Delay(100);
-   printf("                                    .!###:     !######!                                .    !######    .!!.      .###!.                                     \n");
-   Delay(100);
-   printf("                                      :####.     .!#####!.                                  :#######!       .    :###:                                       \n");
-   Delay(100);
-   printf("                                        !####.                                              .########:  .##:   :###!                                         \n");
-   Delay(100);
-   printf("                                         .!#####.                                           !#########.  !#######!.                                          \n");
-   Delay(100);
-   printf("                                            :######:                                       .##########.  !#####:                                             \n");
-   Delay(100);
-   printf("                                               !#######!.                                 .#################:                                               \n");
-   Delay(100);
-   printf("                                                  .!#########!:.                        .!##############!.                                                  \n");
-   Delay(100);
-   printf("                                                      .:###########################:  :#############:.                                                        \n");
-   Delay(100);
-   printf("                                                            .:################################:.                                                              \n");
-   Delay(100);
-   printf("                                                                        ..:::!!!!!!:::..                                                                      \n");
-   Delay(100);
+   printf("%s                                                                 .:!!##################!!:.                                                                 %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                                         .:#########!..              .:!#########:.                                                          %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                                    .!#####!:.                                .:!#####!.                                                     %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                                .!#####:                                            :!####!.                                                 %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                              !####:                           .#                       :####!                                               %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                           :####.                            :###.     .....::::!!!!###:   .####:                                            %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                         !###:                            :#####:  .!###############!.     .!#####!                                          %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                       !###:                          .#######!   !########!:.       .:!############:                                        %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                     :###!.                      .:#########!.             .!!###################:!###.                                      %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                    :###:                     :############################!!..  .:########!:.    .####:                                     %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                   !###.                   .######################################:         ..!#########:                                    %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                  .###:                  !############################################.  .###############.                                  %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                  !##!               .:#################################################!.  :###!:..  !##!                                  %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                 .###:            .!########:  :########################!!!!###########.   ....:::!#######.                                 %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                 :###.              !####!..!################!:.  .:!#######!:.   :!######:  .!###########:                                 %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                 .###.            .#########################!.   .:!!::.   .:#####!.   .!#####!:..    :###.                                 %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                 .###:      .   .!########################!         .!######.  .!#####!.              :###                                  %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                  :###     .#############################:             :######!.  :#######:    !#########:                                  %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                  .!###    :###############!::!!##:      .              .#####!     :########!.   .:!###!.                                  %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                   .###!.  .###########:                                :##!  .###:   :##!!#####!   !###                                    %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                    .!###:     !######!                                .    !######    .!!.      .###!.                                     %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                      :####.     .!#####!.                                  :#######!       .    :###:                                       %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                        !####.                                              .########:  .##:   :###!                                         %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                         .!#####.                                           !#########.  !#######!.                                          %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                            :######:                                       .##########.  !#####:                                             %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                               !#######!.                                 .#################:                                               %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                                  .!#########!:.                        .!##############!.                                                  %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                                      .:###########################:  :#############:.                                                        %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                                            .:################################:.                                                              %s\n", SCARLET_RED, RESET);
+Delay(100);
+printf("%s                                                                        ..:::!!!!!!:::..                                                                      %s\n", SCARLET_RED, RESET);
+Delay(100);
   
 
-    printf("\t\t                                                Val's Adventure!  \n\n");
-    printf("\t\t                                        ----------------------------------\n\n");
+    printf("\t\t                                                Val's Dilemma: ");
+    printf(PURPLE"Dark Destiny\n\n");
+    printf("\t\t                                            ----------------------------------\n\n"RESET);
     printf("\t\t                                              Press any key to begin...\n\n");
 
    
@@ -322,8 +329,14 @@ void DrawMap1(){ // draws the map on the screen
         for (x = 0; x < 15; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
-                printf("  & ");
+                printf(SCARLET_RED"  & "RESET);
             }
+            else if (map1[y][x] == '@'){
+				printf(GOLD"  %c "RESET, map1[y][x]);
+			}
+			else if (map1[y][x] == 'O'){
+				printf(BLUE"  %c "RESET, map1[y][x]);
+			}
             else{
                 printf("  %c ", map1[y][x]);       // draws the corresponding character on the map
             }
@@ -373,14 +386,19 @@ void DrawMap2(){ // draws the map on the screen
         for (x = 0; x < 30; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
-                printf("& ");
+                printf(SCARLET_RED"& "RESET);
             }
 			
 			else if(x == monster1X && y == monster1Y){
 			
-				printf("W ");
+				printf(GREEN"W "RESET);
 			}
-			
+			else if (map2[y][x] == '@'){
+				printf(GOLD"%c "RESET, map2[y][x]);
+			}
+			else if (map2[y][x] == 'O'){
+				printf(BLUE"%c "RESET, map2[y][x]);
+			}
             else{
                 printf("%c ", map2[y][x]);       // draws the corresponding character on the map
             }
@@ -461,24 +479,30 @@ void DrawMap3(){ // draws the map on the screen
         for (x = 0; x < 60; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
-                printf("& ");
+                printf(SCARLET_RED"& "RESET);
             }
 			
 			else if(x == monster2X && y == monster2Y){
 			
-				printf("K ");
+				printf(ORANGE"K "RESET);
 			}
 			else if(x == monster1X && y == monster1Y){
 				
-				printf("W ");
+				printf(GREEN"W "RESET);
 			}
 			else if(x == monster1X_2  && y == monster1Y_2){
 				
-				printf("W ");
+				printf(GREEN"W "RESET);
 			}
 			else if(x == monster1X_3 && y == monster1Y_3){
 				
-				printf("W ");
+				printf(GREEN"W "RESET);
+			}
+			else if (map3[y][x] == '@'){
+				printf(GOLD"%c "RESET, map3[y][x]);
+			}
+			else if (map3[y][x] == 'O'){
+				printf(BLUE"%c "RESET, map3[y][x]);
 			}
 			else{
 			
@@ -518,11 +542,17 @@ void DrawMap4(){
         for (x = 0; x < 20; x++){
             if (x == playerX && y == playerY){   // draws the player at the current position
             
-                printf("  & ");
+                printf(SCARLET_RED"  & "RESET);
             }
             else if (x == monster3X && y == monster3Y){
             	
             	printf("  M ");
+			}
+			else if (map4[y][x] == 'J'){
+				printf(PURPLE"  %c "RESET, map4[y][x]);
+			}
+			else if (map4[y][x] == 'O'){
+				printf(BLUE"  %c "RESET, map4[y][x]);
 			}
             else{
             	
@@ -1174,8 +1204,8 @@ int Game3(){
     monster1Y_3 = 23;
     monster1X = 15;
     monster1Y = 39;
-    monster2X = 25;
-    monster2Y = 11;
+    monster2X = 24;
+    monster2Y = 10;
     map3[36][15] = '@';
 	map3[59][39] = 'D';
 	map3[17][31] = '#';
@@ -1824,6 +1854,9 @@ int Game4(){
     playerY = 13;
     monster3X = 14;
     monster3Y = 6;
+    map4[5][15] = '#';
+	map4[6][15] = '#';
+	map4[7][15] = '#';
     DrawMap4();
     printf("\n\n                                                                           HP: %d\n\n", hp);
     
