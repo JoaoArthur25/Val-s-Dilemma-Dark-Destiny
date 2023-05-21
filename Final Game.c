@@ -49,7 +49,7 @@ int intro_music_break= 0;
 
 void *beep_thread(void *arg){
 	while(intro_music_break == 0){
-	int tempo = 1500;
+	int tempo = 2000;
 	playNote(440, tempo);
     playNote(415, tempo);
     playNote(440, tempo);
@@ -89,14 +89,212 @@ void *lvl_3_music(void *arg){
 }
 }
 
-void Intro(){
+int lvl_4_music_break = 0;
+
+void *lvl_4_music(void *arg){
+	while(lvl_4_music_break == 0){
+	int tempo = 750;
+	playNote(440, tempo);
+    playNote(415, tempo);
+    playNote(440, tempo);
+    playNote(415, tempo);
+    playNote(523, tempo);
+    playNote(494, tempo);
+    playNote(466, tempo);
+}}
+
+void Ending_A(){
+intro_music_break= 0;
+system("cls||clear");
+Delay(2000);
+pthread_t tid;
+pthread_create(&tid, NULL, beep_thread, NULL);
+printf("                   ENDING A: Val Embraces the Dark Magic!\n\n\n");
+printf("Val, driven by her desire to dismantle the corrupt empire, delves deep into the dangerous\n");
+Delay(500);
+printf("dungeon in search of the powerful artifact rumored to be hidden within. With every step she\n");
+Delay(500);
+printf("takes, the air grows thick with the essence of dark magic, whispering promises of immense \n");
+Delay(500);
+printf("power. Despite the foreboding atmosphere, Val remains resolute, convinced that the end\n");
+Delay(500);
+printf("justifies the means.");
+Delay(8000);
+printf("\n\n");
+printf("Finally, after battling through hordes of monsters and evading treacherous traps, Val reaches\n");
+Delay(500);
+printf("the heart of the dungeon. There, she finds the artifact—an ancient sword pulsating with dark\n");
+Delay(500);
+printf("energy. She can feel its power calling out to her, its potential to wreak havoc on the empire\n");
+Delay(500);
+printf("and its allies.");
+Delay(8000);
+printf("\n\n");
+printf("Hesitation tugs at Val's conscience, for she knows the dangers of harnessing such dark\n");
+Delay(500);
+printf("forces. The sword's malevolence seems to seep into her very soul, tempting her with the \n");
+Delay(500);
+printf("allure of dominion and revenge. Yet, driven by her burning determination, she firmly grasps\n");
+Delay(500);
+printf("the hilt of the sword, allowing the dark magic to course through her veins.\n");
+Delay(8000);
+printf("\n\n");
+printf("With that vile sword in her claws, Val emerges from the depths of the dungeon, her body radiating an\n");
+Delay(500);
+printf("unsettling aura. The members of her group look at her with a mixture of awe and \n");
+Delay(500);
+printf("fear. They recognize the tremendous power she now wields, but they also sense the\n");
+Delay(500);
+printf("imminent threat it poses to Val's own mind.");
+Delay(8000);
+printf("\n\n");
+printf("As time goes by... Val feels the tendrils of the dark magic tightening their grip on\n");
+Delay(500);
+printf("her spirit. The once-vibrant flame of her ideals flickers and wanes, replaced by a hunger for\n");
+Delay(500);
+printf("more power. As she gazes upon the ashes of the lives she destroyed so ruthlessly, the dragonborn\n");
+Delay(500);
+printf("realizes the true cost of her choice.");
+Delay(8000);
+printf("\n\n");
+    printf("                                                           .@#@@:                                   .!!:                ,\n");
+    Delay(100);
+    printf("                                                         :@@#@@@.                             :!@@@#@!                  \n");
+    Delay(100);
+    printf("                                                       :@@#@#@@#                         .:!!:.!:!!:.                   \n");
+    Delay(100);
+    printf("                                                     .:@@#@@@@@.                    .#@!.:!!::.#::....                  \n");
+    Delay(100);
+    printf("                                  !                 .#@@@@####@.              .!##!::!!!!!:..#!::...                    \n");
+    Delay(100);
+    printf("                                  !#.              !@@@##!##@@@#@.       .!@@!:!:::::!!#:..##:...                       \n");
+    Delay(100);
+    printf("                                 .#@#           :!!@@#!@@@#!!!!!###@@@@#!!#@!::!!!:!!!..... :!                          \n");
+    Delay(100);
+    printf("                                .##.#.       .!@!@@#!!!!!!!:!!!@!.!##:::!##!!!!!!#:.........:@                          \n");
+    Delay(100);
+    printf("                               :#:  #!  !##!!!#:!@!!!!!!!:!##.:!::!!!!!!!!!!::!!!##:.........#!.                        \n");
+    Delay(100);
+    printf("                             !@.    !@##    !!.:!:!#!!!!##!:::::!!!!!!!!#!:::!!!!:!#@#!#!:.....#!                       \n");
+    Delay(100);
+    printf("                           ##..     !!.    !#.!!!#!!:!::!#!!::::!!#@@@#!!!::::!!#!!:::!:.........:!:                    \n");
+    Delay(100);
+    printf("                        :#...       !:      .#!!#!!::::::!!!!!##!::  ##@#!!::::!!#!!::::!#!.......:!##!.                \n");
+    Delay(100);
+    printf("                      :@....        .        !###!!!:!!!!!!@! .:. .##!#!:::::::::!!#!!!!..#::.!!.          :#           \n");
+    Delay(100);
+    printf("           .          #!....              ..!#:!!!:!!!!!!!!!!##@##!!!!!#@##:..... ....::: .@###!         !@@:           \n");
+    Delay(100);
+    printf("            :@#:      #!...             :#!:!:!!!!!:::!:::::::::!##!###!::.......!.....:!: :@##:##@@@@@@!.:#:           \n");
+    Delay(100);
+    printf("             ##..!#: .#!#....         .!#:::!!!::::::::::!!!!##!............:!#!:.......:!. !@#..        !!#.           \n");
+    Delay(100);
+    printf("             ##!.   .###!.....         :@::!!!!!!:!!!!!!@#:......:##@@@#@!!..............:. .!@#...   #!  .#            \n");
+    Delay(100);
+    printf("            ##!..   :!#:....     .#:    ..#@@#!........:#@@@@@@@#!!##!:.....:..:..........   :##:.....    !:            \n");
+    Delay(100);
+    printf("           .!@... ..:#:......   . .#@###: .... .!!!.:....:::..@#!!##:......................   #@!:......##:.            \n");
+    Delay(100);
+    printf("           ::#...  .::#. ...... .....@#....#@@@@@#:......#####:@#!!:..!:!.:!!...............  !##:...        !@@#!      \n");
+    Delay(100);
+    printf("           :!#....:#!.:!.. ..  ..  ...##.....        ..#@@######:#@#...........:............. :#@@#@#...  .##       .   \n");
+    Delay(100);
+    printf("            #@.....@#.::!#:.  ...:......#!..:#!:.         .#@######!#@@:......:.............. .##@@@###@#!:             \n");
+    Delay(100);
+    printf("            ###:....##:!.......:!#!!..   .#....#!.:#@.     .####@##@##!!###:....:::..........  ##@@##@@#####.           \n");
+    Delay(100);
+    printf("     .!@@##::#@##:...###!##::!#@##!::.      !. . !@.   :@:  .##.!#########@###@!.........#@#####@@@#@####@##@@!        \n");
+    Delay(100);
+    printf("        .!:  !#!:..!#@#!.:::!::!!#@:.            !!..   .!::!  @#########@###.@@@#####:..@#####@##@####@#####@@@#..:: \n");
+    Delay(100);
+    printf("             :#!::##:.:!!:::!!!:::::!@#..           ##...   .!   #@#####@####@!...........!@#####@##@####@#####@@@#..     \n");
+    Delay(100);
+    printf("          !.#@@@@#!!:::::::::::::::!!!!@....         @:...       :##@#########@#.........#@#@###@##@####@#########@@@#.  \n");
+    Delay(100);
+    printf("    ..:#@@#. :!#!!!!!:::::::::::::!:#...!#!.  .       .#...     !##@####@######@#:....!@@#@##@@###@###@############@@: : \n");
+    Delay(100);
+    printf("!!!@@!. .:!:::::!#!!!!!::::::::::::!!......!:!!#:.       :#..   :###############@#!#@###@@@@@@@###################@#    \n");
+    Delay(100);
+    printf("!:. :!!:::::::::!!!#!!!!!!!:!!!!#@@##.......    .!.             #@###### !######@#@@@#####:#:      .!!!!!!:. :##@@!     \n");
+    Delay(100);
+    printf("!!!!::::::::::::!##@!#@@@@#!:!:.... !#.......  :!. ..        .!@######..###############!!  :!..               .!:!:     \n");
+    Delay(100);
+    printf("!!::::::::::!!!!!@##  #!:....  !!:!:::!!!.....   :#@@#!:::!#@#######..#################. .:                      .##.   \n");
+    Delay(100);
+    printf("::::::!!!::!!!##!#:     ##:.:!#@#!#@@@@######@###@@###################################                             :#:  \n");
+    Delay(100);
+    printf("::::!::!!!#@@#!..         :::@@####@##############@@@##################@@@@#### :.                           !#  \n");
+    Delay(100);
+    printf("::!::!#!#:                  :@@######################@@########################@@@#!!!.!                           #.  \n");
+    Delay(100);
+    printf("!@#                          !@@#############################@@@@@@@@@@@@@@@###. @@#!!!! !                        .#    \n");
+    Delay(100);
+    printf("#.                           :@@@##################################@@@#:!.        #@!!!!!#:!                    :#@@:   \n");
+    Delay(100);
+    printf("                             .#@@###############################@@@!.             :@#!!@!!!!!!#:.           :#:      . .\n");
+    Delay(100);
+	Delay(10000);
 	
+	system("cls||clear");
+	printf("             Thank you for playing!");
+
+
+}
+
+void Ending_B(){
+intro_music_break= 0;
+system("cls||clear");
+Delay(2000);
+pthread_t tid;
+pthread_create(&tid, NULL, beep_thread, NULL);
+printf("                   ENDING B: Val Rejects the Dark Magic!\n\n\n");
+printf("As Val ventures deeper into the treacherous dungeon, the malevolent aura of dark magic \n");
+Delay(500);
+printf("surrounds her. She witnesses the horrors that await those who succumb to its influence—\n");
+Delay(500);
+printf("monsters twisted by its power, traps designed to ensnare and corrupt. The sight of such\n");
+Delay(500);
+printf("wickedness fills her with dread and revulsion.\n");
+Delay(8000);
+printf("\n\n");
+printf("In the heart of the dungeon, Val finally finds the artifact—an ancient sword radiating with \n");
+Delay(500);
+printf("She sees the suffering it has caused and the path of destruction it would lead her down if she\n");
+Delay(500);
+printf("were to embrace its power.\n");
+Delay(8000);
+printf("\n\n");
+printf("With a heavy heart, Val resists the seductive allure of the sword. She decides that she will not \n");
+Delay(500);
+printf("succumb to the same darkness she fights against. Knowing that wielding the artifact would \n");
+Delay(500);
+printf("corrupt her noble cause, she resolves to find an alternative way to bring down the corrupt \n");
+Delay(500);
+printf("empire.\n");
+Delay(8000);
+printf("\n\n");
+printf("Val emerges from the depths of the dungeon, leaving the artifact untouched. She gathers\n");
+Delay(500);
+printf("her comrades, explaining her change of heart and emphasizing the importance of\n");
+Delay(500);
+printf("preserving their principles. Together, they devise a plan that relies on unity, strategy, and the\n");
+Delay(500);
+printf("power of their shared convictions...");
+Delay(13000);
+	system("cls||clear");
+	printf("             Thank you for playing!");
+
+
+}
+
+void Intro(){
+	intro_music_break= 0;
 	int frame = 0;
     int x = 0;
 
 
     while (frame < 600) { 
-        system("cls||clear"); 
+    system("cls||clear"); 
     printf("\n\nCreators:\n-Igor 'Radicrow' Acatauassu\n-Joao Arthur 'JoaoArthur25' da Silva\n-Kelton 'KeltonSousa' Sousa\n\n");
     Delay(3000);
     printf("%s\n                                                     .\\^/.\n%s", SCARLET_RED, RESET);
@@ -153,7 +351,7 @@ void Intro(){
 	printf("With sword in hand and armor on her back, Val sets out to explore the treacherous dungeon\n");
 	printf("and claim the artifact for herself. But she soon realizes that the dangers she faces are greater \n");
 	printf("than she ever imagined. Deadly traps, fierce monsters and dark magic stand in her way, she \n");
-	printf("she must use all her skills and cunning to survive.\n");
+	printf("must use all her skills and cunning to survive.\n");
 	Delay(10000);
 	printf(".");
 	Delay(1000);
@@ -259,7 +457,7 @@ void Tutorial(){
 	
 	char option;
 	system("cls || clear");
-	 printf("\n\n                                  Val's adventure is an adventure/puzzle game where your goal is to take Val to the end of her adventure\n"
+	 printf("\n\n                                 Val's Dilemma: Dark Destiny is an adventure/puzzle game where your goal is to take Val to the end of her adventure\n"
 	 "                                                  in this dungeon where she's looking for an ancient cursed weapon.\n\n");
 	 printf("                                              In each level the player must move to get a key to open the closed door.\n\n\n");
 	 printf("                                                                             W: Up\n");
@@ -1846,6 +2044,9 @@ int Game3(){
 }
 
 int Game4(){
+	lvl_4_music_break = 0;
+	pthread_t tid_4;
+    pthread_create(&tid_4, NULL, lvl_4_music, NULL);
 	char input;
     char interaction;
     int i;
@@ -2089,7 +2290,6 @@ int Menu(){
 }
 
 int main(){
-	
 Intro();
 return 0;
 }
