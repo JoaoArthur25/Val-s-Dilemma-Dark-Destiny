@@ -725,11 +725,10 @@ char map4[15][20] = {
 	{'*', ' ', '*', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', '*', ' ', ' ', '*', '*'},
 	{'*', ' ', '*', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', ' ', '*', ' ', ' ', '*', '*'},
 	{'*', ' ', '*', ' ', ' ', ' ', '#', '#', '#', '#', '#', '#', '#', ' ', ' ', '*', ' ', ' ', '*', '*'},
-	{'*', ' ', '*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*', '*'},
+	{'*', ' ', '*', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*', '*'},
 	{'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'}
 };
-
-
+///[13][2] ao [13][12] e 14 2 ao 14 12 botao[14[1] botão2[14][13]
 void DrawMap4(){
 	
 	system("cls || clear"); 
@@ -2079,7 +2078,7 @@ int Game4(){
 				else{
 					playerY--;
 				}
-				if(map4[playerY][playerX] == 'O'){
+				if(map4[playerY][playerX] == map4[1][14]){
 				map4[5][15] = ' ';
 				map4[6][15] = ' ';
 				map4[7][15] = ' ';
@@ -2103,7 +2102,20 @@ int Game4(){
 				}
 				else{
 					playerX--;
-				}	
+				}
+				if (playerY == 13 && playerX == 3) {
+                    // Substitui os espaços vazios pelos espinhos nas colunas 13 e 14, da linha 2 à 12
+                    for (i = 2; i <= 12; i++) {
+                        map4[i][3] = '#';
+                        map4[i][4] = '#';
+                    }
+                    for (i = 2; i <= 12; i++) {
+                        if(monster3Y == i && (monster3X == 3 || monster3X ==4)){
+                        	map4[7][12] = ' ';
+                        	map4[8][12]= ' ';
+						}
+                    }
+                }
            		if(playerY == monster3Y && playerX + 1 == monster3X)
 				{
 					playerX = 1, playerY = 13;
@@ -2123,6 +2135,19 @@ int Game4(){
 				else{
 					playerY++;
 				}
+				if (playerY == 13 && playerX == 3) {
+                    // Substitui os espaços vazios pelos espinhos nas colunas 13 e 14, da linha 2 à 12
+                    for (i = 3; i <= 12; i++) {
+                        map4[i][3] = '#';
+                        map4[i][4] = '#';
+                    }
+                    for (i = 2; i <= 12; i++) {
+                        if(monster3Y == i && (monster3X == 3 || monster3X ==4)){
+                        	map4[7][12] = ' ';
+                        	map4[8][12]= ' ';
+						}
+                    }
+                }
 				if(playerY == monster3Y && playerX + 1 == monster3X)
 				{
 					playerX = 1, playerY = 13;
@@ -2143,7 +2168,7 @@ int Game4(){
 				else{
 					playerX++;
 				}	
-				if(map4[playerY][playerX] == 'O'){
+				if(map4[playerY][playerX] == map4[1][14]){
 				map4[5][15] = ' ';
 				map4[6][15] = ' ';
 				map4[7][15] = ' ';
@@ -2161,7 +2186,7 @@ int Game4(){
 		case 'I':
 			if(map4[playerY + 1][playerX] == 'J' || map4[playerY - 1][playerX] == 'J' || map4[playerY][playerX + 1] == 'J' || map4[playerY][playerX - 1] == 'J') // interaction with the button
 			{
-				// puxar ending da espada (canonica)
+				Ending_A();
 			}
 			break;
 			
@@ -2176,7 +2201,7 @@ int Game4(){
     
     if(map4[playerY][playerX] == '='){
 		system("cls||clear");
-		// puxar ending não canonica
+		Ending_B();
 		break;
 	}
 		
