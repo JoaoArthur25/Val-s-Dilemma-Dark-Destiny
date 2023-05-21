@@ -2057,6 +2057,12 @@ int Game4(){
     map4[5][15] = '#';
 	map4[6][15] = '#';
 	map4[7][15] = '#';
+	for (i = 2; i <= 12; i++) {
+        map4[i][3] = ' ';
+        map4[i][4] = ' ';
+    }
+    map4[7][12] = '#';
+    map4[8][12]= '#';
     DrawMap4();
     printf("\n\n                                                                           HP: %d\n\n", hp);
     
@@ -2104,7 +2110,7 @@ int Game4(){
 					playerX--;
 				}
 				if (playerY == 13 && playerX == 3) {
-                    // Substitui os espaços vazios pelos espinhos nas colunas 13 e 14, da linha 2 à 12
+                    
                     for (i = 2; i <= 12; i++) {
                         map4[i][3] = '#';
                         map4[i][4] = '#';
@@ -2136,7 +2142,7 @@ int Game4(){
 					playerY++;
 				}
 				if (playerY == 13 && playerX == 3) {
-                    // Substitui os espaços vazios pelos espinhos nas colunas 13 e 14, da linha 2 à 12
+                    
                     for (i = 3; i <= 12; i++) {
                         map4[i][3] = '#';
                         map4[i][4] = '#';
@@ -2231,10 +2237,15 @@ int Game4(){
 	case 1:	
 		system("cls || clear");
 	    Beep(650, 150);
-	    map4[7][14] = 'D';
-		map4[12][1] = '@';
-		map4[3][2] = '#';
-		map4[4][2] = '#';
+	    map4[5][15] = '#';
+		map4[6][15] = '#';
+		map4[7][15] = '#';
+		for (i = 2; i <= 12; i++) {
+        map4[i][3] = ' ';
+        map4[i][4] = ' ';
+    	}
+    	map4[7][12] = '#';
+    	map4[8][12]= '#';
 		Menu();
 		break;
 	
@@ -2253,10 +2264,15 @@ int Game4(){
 		printf("\n");
 		printf("Choose a valid option, returning to Menu...");
 		sleep(1);
-		map4[7][14] = 'D';
-		map4[12][1] = '@';
-		map4[3][2] = '#';
-		map4[4][2] = '#';
+		map4[5][15] = '#';
+		map4[6][15] = '#';
+		map4[7][15] = '#';
+		for (i = 2; i <= 12; i++) {
+        map4[i][3] = ' ';
+        map4[i][4] = ' ';
+    	}
+    	map4[7][12] = '#';
+    	map4[8][12]= '#';
 		Menu();
 	
 	}
