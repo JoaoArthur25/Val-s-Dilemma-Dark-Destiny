@@ -2288,10 +2288,18 @@ int Menu(){
 	int option;
 	
     
-   	printf("\n\n\n\n\n\n                                        --------------------------------------------------------------------------------\n");														
-    printf(" \n\n\n\n                                                                      Choose your option:\n\n   ");                              
-	printf("                                                   1. Start           2. Tutorial           3. Leave\n\n\n"); 
-	printf("                                         --------------------------------------------------------------------------------\n");  
+   	printf("\n\n\n\n\n\n\n\n\n\n\n");
+	printf("                 					----------------------------------\n");
+	printf("                 					|        Choose your option:     |\n");
+	printf("                 					----------------------------------\n");
+	printf("                 					|                                |\n");
+	printf("                 					|          1. Start              |\n");
+	printf("                 					|          2. Tutorial           |\n");
+	printf("                 					|          3. Leave              |\n");
+	printf("                 					|                                |\n");
+	printf("                 					----------------------------------\n");
+
+	  
 	
 	fflush(stdin);
 	scanf("%d", &option);
