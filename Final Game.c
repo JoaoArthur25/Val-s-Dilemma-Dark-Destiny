@@ -11,7 +11,8 @@
 #define ORANGE "\x1b[38;5;202m"
 #define BLUE    "\x1b[34m"
 #define SCARLET_RED "\x1b[38;2;220;20;60m"
-#define PURPLE "\x1b[35;1m"
+#define PURPLE "\033[0;34;35m"
+#define BLUE_PURPLE "\033[0;38;5;99m"
 #define RESET "\x1b[0m"
 
 int monster1X, monster1Y, monster1X_2, monster1Y_2, monster1X_3, monster1Y_3, monster2X, monster2Y, monster3X, monster3Y; 
@@ -728,6 +729,7 @@ char map4[15][20] = {
 	{'*', ' ', '*', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*', '*'},
 	{'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'}
 };
+///[13][2] ao [13][12] e 14 2 ao 14 12 botao[14[1] botão2[14][13]
 void DrawMap4(){
 	
 	system("cls || clear"); 
@@ -742,7 +744,7 @@ void DrawMap4(){
             }
             else if (x == monster3X && y == monster3Y){
             	
-            	printf("  M ");
+            	printf(BLUE_PURPLE"  M "RESET);
 			}
 			else if (map4[y][x] == 'J'){
 				printf(PURPLE"  %c "RESET, map4[y][x]);
@@ -2109,7 +2111,7 @@ int Game4(){
 					playerX--;
 				}
 				if (playerY == 13 && playerX == 3) {
-                    
+                    // Substitui os espaços vazios pelos espinhos nas colunas 13 e 14, da linha 2 à 12
                     for (i = 2; i <= 12; i++) {
                         map4[i][3] = '#';
                         map4[i][4] = '#';
@@ -2141,7 +2143,7 @@ int Game4(){
 					playerY++;
 				}
 				if (playerY == 13 && playerX == 3) {
-                    
+                    // Substitui os espaços vazios pelos espinhos nas colunas 13 e 14, da linha 2 à 12
                     for (i = 3; i <= 12; i++) {
                         map4[i][3] = '#';
                         map4[i][4] = '#';
