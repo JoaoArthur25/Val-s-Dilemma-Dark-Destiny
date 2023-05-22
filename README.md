@@ -1,38 +1,35 @@
 # Val's Dilemma: Dark Destiny
 
-## Descrição
-Em um mundo governado por um império corrupto, uma ex-soldado dragonborn chamada Val pega em armas contra as forças da tirania. Ela testemunhou pessoalmente as atrocidades cometidas pelo império e está determinada a acabar com o reinado de terror deles.
+## Description
+In a world ruled by a corrupt empire, a dragonborn ex-soldier named Val takes up arms against the forces of tyranny. She has seen the atrocities committed by the empire firsthand and she is determined to put an end to their reign of terror.
 
-Um dia, Val ouve rumores sobre um artefato poderoso escondido nas profundezas de um perigoso calabouço. Muitos tentaram reivindicar esse artefato antes, mas nenhum retornou para contar a história. Apesar dos riscos, Val vê isso como uma oportunidade para ganhar vantagem contra o império e derrubá-lo de uma vez por todas.
+One day, Val hears rumors of a powerful artifact hidden deep within a dangerous dungeon. Many have tried to claim this artifact before, but none have returned to tell the tale. Despite the risks, Val sees this as an opportunity to gain an edge against the empire and bring them to their knees.
 
-Com sua espada em mãos e armadura nas costas, Val parte em uma jornada para explorar o traiçoeiro calabouço e reivindicar o artefato para si mesma. No entanto, ela logo percebe que os perigos que enfrenta são maiores do que ela jamais imaginou. Armadilhas mortais, monstros ferozes e magia negra estão em seu caminho. Ela precisará usar todas as suas habilidades e astúcia para sobreviver.
+With sword in hand and armor on her back, Val sets out to explore the treacherous dungeon and claim the artifact for herself. But she soon realizes that the dangers she faces are greater than she ever imagined. Deadly traps, fierce monsters, and dark magic stand in her way. She must use all her skills and cunning to survive.
 
-Será que Val será capaz de superar os desafios do calabouço e reivindicar o artefato? E se ela o fizer, será suficiente para ajudá-la a alcançar seu objetivo final de derrubar o império corrupto? Somente o tempo dirá...
+Will Val be able to overcome the challenges of the dungeon and claim the artifact? And if she does, will it be enough to help her achieve her ultimate goal of taking down the corrupt empire? Only time will tell...
 
-## Recursos
-Jogo de calabouço emocionante
-Gráficos imersivos
-Desafios estratégicos
-Combates intensos
-Ambiente rico em lore
-Trilha sonora épica
+## Features
+Exciting dungeon gameplay
+Immersive graphics
+Strategic challenges
+Intense combat
+Rich lore environment
+Epic soundtrack
 
-## Equipe
-Igor Acatauassú - Programação e Design de Jogo
-João Arthur Silva - Arte e Design de Personagens
-Kelton Sousa - Áudio e Efeitos Sonoros
+## Team
+Igor Acatauassú 
+João Arthur Silva 
+Kelton Sousa 
 
 ## Como Jogar
-Faça o download do arquivo do jogo.
-Execute o arquivo
-Siga as instruções dentro do jogo para aprender os controles e mecânicas.
-Explore o calabouço, enfrente inimigos, resolva quebra-cabeças e avance na história.
-Aproveite a jornada de Val em sua luta contra o império corrupto!
+1. Download the game file.
+2. Run the file.
+3. Follow the in-game instructions to learn the controls and mechanics.
+4. Explore the dungeon, face enemies, solve puzzles, and advance the story.
+5. Enjoy Val's journey in her fight against the corrupt empire!
 
-## Contribuição
-Agradecemos seu interesse em contribuir para o desenvolvimento do Val's Dilemma: Dark Destiny. Se você encontrar problemas, bugs ou tiver sugestões de melhorias, sinta-se à vontade para enviar um pull request ou abrir uma issue no repositório oficial do jogo.
+## Acknowledgments
+The Scarlet Dawn team would like to thank all the players who embark on this exciting journey. We hope you have as much fun playing Val's Dilemma: Dark Destiny as we did creating it. Your support is greatly appreciated!
 
-## Agradecimentos
-A equipe Scarlet Dawn gostaria de agradecer a todos os jogadores que embarcarem nessa jornada emocionante. Esperamos que vocês se divirtam jogando Val's Dilemma: Dark Destiny tanto quanto nós nos divertimos criando-o. Seu apoio é muito apreciado!
-
-## Divirta-se e boa sorte, aventureiro!
+## Have fun and good luck, adventurer!
