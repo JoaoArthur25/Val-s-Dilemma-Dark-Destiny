@@ -108,6 +108,7 @@ void Ending_A(){
 intro_music_break= 0;
 system("cls||clear");
 Delay(2000);
+system("color 04");
 pthread_t tid;
 pthread_create(&tid, NULL, beep_thread, NULL);
 printf("                   ENDING A: Val Embraces the Dark Magic!\n\n\n");
@@ -124,7 +125,7 @@ Delay(8000);
 printf("\n\n");
 printf("Finally, after battling through hordes of monsters and evading treacherous traps, Val reaches\n");
 Delay(500);
-printf("the heart of the dungeon. There, she finds the artifact—an ancient sword pulsating with dark\n");
+printf("the heart of the dungeon. There, she finds the artifact an ancient sword pulsating with dark\n");
 Delay(500);
 printf("energy. She can feel its power calling out to her, its potential to wreak havoc on the empire\n");
 Delay(500);
@@ -251,14 +252,14 @@ pthread_create(&tid, NULL, beep_thread, NULL);
 printf("                   ENDING B: Val Rejects the Dark Magic!\n\n\n");
 printf("As Val ventures deeper into the treacherous dungeon, the malevolent aura of dark magic \n");
 Delay(500);
-printf("surrounds her. She witnesses the horrors that await those who succumb to its influence—\n");
+printf("surrounds her. She witnesses the horrors that await those who succumb to its influenceâ€”\n");
 Delay(500);
 printf("monsters twisted by its power, traps designed to ensnare and corrupt. The sight of such\n");
 Delay(500);
 printf("wickedness fills her with dread and revulsion.\n");
 Delay(8000);
 printf("\n\n");
-printf("In the heart of the dungeon, Val finally finds the artifact—an ancient sword radiating with \n");
+printf("In the heart of the dungeon, Val finally finds the artifactâ€”an ancient sword radiating with \n");
 Delay(500);
 printf("She sees the suffering it has caused and the path of destruction it would lead her down if she\n");
 Delay(500);
@@ -474,7 +475,7 @@ void Tutorial(){
 	 printf("                                                                O: symbol representing a button that the player can interact\n");
 	 printf("                                                                #: symbol representing a thorn. The player lost hp when he touches it.\n");
 	 printf("                                                                >: symbol representing a teleportation\n");
-	 printf("                                                                ¬: symbol representing a level 1 monster\n");
+	 printf("                                                                Â¬: symbol representing a level 1 monster\n");
 	 printf("                                                                k: symbol representing a level 2 monster\n\n");
 	 printf("                                                                Press M to go back to the Menu: \n\n\n   ");  
 	 
@@ -729,7 +730,7 @@ char map4[15][20] = {
 	{'*', ' ', '*', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*', ' ', ' ', '*', '*'},
 	{'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'}
 };
-///[13][2] ao [13][12] e 14 2 ao 14 12 botao[14[1] botão2[14][13]
+///[13][2] ao [13][12] e 14 2 ao 14 12 botao[14[1] botÃ£o2[14][13]
 void DrawMap4(){
 	
 	system("cls || clear"); 
@@ -2111,7 +2112,7 @@ int Game4(){
 					playerX--;
 				}
 				if (playerY == 13 && playerX == 3) {
-                    // Substitui os espaços vazios pelos espinhos nas colunas 13 e 14, da linha 2 à 12
+                    // Substitui os espaÃ§os vazios pelos espinhos nas colunas 13 e 14, da linha 2 Ã  12
                     for (i = 2; i <= 12; i++) {
                         map4[i][3] = '#';
                         map4[i][4] = '#';
@@ -2143,7 +2144,7 @@ int Game4(){
 					playerY++;
 				}
 				if (playerY == 13 && playerX == 3) {
-                    // Substitui os espaços vazios pelos espinhos nas colunas 13 e 14, da linha 2 à 12
+                    // Substitui os espaÃ§os vazios pelos espinhos nas colunas 13 e 14, da linha 2 Ã  12
                     for (i = 3; i <= 12; i++) {
                         map4[i][3] = '#';
                         map4[i][4] = '#';
@@ -2193,6 +2194,8 @@ int Game4(){
 		case 'I':
 			if(map4[playerY + 1][playerX] == 'J' || map4[playerY - 1][playerX] == 'J' || map4[playerY][playerX + 1] == 'J' || map4[playerY][playerX - 1] == 'J') // interaction with the button
 			{
+		pthread_join(tid_4, NULL);
+		lvl_4_music_break++;
 				Ending_A();
 				return 0;
 			}
@@ -2209,6 +2212,8 @@ int Game4(){
     
     if(map4[playerY][playerX] == '='){
 		system("cls||clear");
+		pthread_join(tid_4, NULL);
+		lvl_4_music_break++;
 		Ending_B();
 		break;
 	}
@@ -2217,7 +2222,8 @@ int Game4(){
 
 	if(hp == 0)
 	{
-
+		pthread_join(tid_4, NULL);
+		lvl_4_music_break++;
 		printf("\n\n\n        Val's strength was not enough to overcome the dungeon's challenges and claim the artifact, now she lies dead in the depths of the dungeon.");
 		Delay(500);
 		printf(".");
