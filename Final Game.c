@@ -2194,6 +2194,7 @@ int Game4(){
 			if(map4[playerY + 1][playerX] == 'J' || map4[playerY - 1][playerX] == 'J' || map4[playerY][playerX + 1] == 'J' || map4[playerY][playerX - 1] == 'J') // interaction with the button
 			{
 				Ending_A();
+				return 0;
 			}
 			break;
 			
