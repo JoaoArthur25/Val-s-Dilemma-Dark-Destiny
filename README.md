@@ -24,7 +24,7 @@ Kelton Sousa - Áudio e Efeitos Sonoros
 
 ## Como Jogar
 Faça o download do arquivo do jogo.
-Execute o arquivo e jogue :)
+Execute o arquivo
 Siga as instruções dentro do jogo para aprender os controles e mecânicas.
 Explore o calabouço, enfrente inimigos, resolva quebra-cabeças e avance na história.
 Aproveite a jornada de Val em sua luta contra o império corrupto!
