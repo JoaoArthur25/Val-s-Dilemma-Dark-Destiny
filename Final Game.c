@@ -470,15 +470,18 @@ void Tutorial(){
 	 
 	 printf("                                                                &: symbol representing the player\n");
 	 printf("                                                                *: symbol representing a wall\n");
-	 printf("                                                                @: symbal representing a key\n");
+	 printf("                                                                @: symbal representing a key. Press I to interact\n");
 	 printf("                                                                D: symbol representing a close door\n");
 	 printf("                                                                =: symbol representing a open door\n\n");
 	 printf("                                                                O: symbol representing a button that the player can interact\n");
 	 printf("                                                                #: symbol representing a thorn. The player lost hp when he touches it.\n");
 	 printf("                                                                >: symbol representing a teleportation\n");
-	 printf("                                                                ¬: symbol representing a level 1 monster\n");
-	 printf("                                                                k: symbol representing a level 2 monster\n\n");
+	 printf("                                                                J: symbol representing the Sword. Press I to interact\n");
+	 printf("                                                                W: symbol representing a level 1 monster\n");
+	 printf("                                                                K: symbol representing a level 2 monster\n");
+	 printf("                                                                M: symbol representing a level 3 monster\n\n");
 	 printf("                                                                Press M to go back to the Menu: \n\n\n   ");  
+	 
 	 
 	 printf("                                         --------------------------------------------------------------------------------\n");
 	 fflush(stdin);
